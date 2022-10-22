@@ -95,7 +95,6 @@ namespace EnvironmentalInformation {
         bitwise_ptr: BitwiseBuiltin*,
     }(ctx: model.ExecutionContext*) -> model.ExecutionContext* {
         %{ print("0x3d - RETURNDATASIZE") %}
-        // Get caller address.
         let return_data_size = Helpers.to_uint256(ctx.return_data_len);
         let stack: model.Stack* = Stack.push(ctx.stack, return_data_size);
 
@@ -122,7 +121,6 @@ namespace EnvironmentalInformation {
         bitwise_ptr: BitwiseBuiltin*,
     }(ctx: model.ExecutionContext*) -> model.ExecutionContext* {
         %{ print("0x36 - CALLDATASIZE") %}
-        // Get caller address.
         let calldata_size = Helpers.to_uint256(ctx.calldata_len);
         let stack: model.Stack* = Stack.push(ctx.stack, calldata_size);
 
