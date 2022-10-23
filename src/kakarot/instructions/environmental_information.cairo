@@ -95,6 +95,7 @@ namespace EnvironmentalInformation {
         bitwise_ptr: BitwiseBuiltin*,
     }(ctx: model.ExecutionContext*) -> model.ExecutionContext* {
         %{ print("0x3d - RETURNDATASIZE") %}
+        //Get return data size
         let return_data_size = Helpers.to_uint256(ctx.return_data_len);
         let stack: model.Stack* = Stack.push(ctx.stack, return_data_size);
 
